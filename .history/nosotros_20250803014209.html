@@ -3,67 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diseño Web - Sonest</title>
+    <title>Sobre Nosotros - Sonest</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" href="https://i.imgur.com/gXWLOT4.png" type="image/png">
     <style>
-        .service-detail {
+        .about-section {
             padding: 6rem 0;
         }
 
-        .service-content {
+        .about-content {
             display: flex;
             gap: 4rem;
             align-items: center;
         }
 
-        .service-text {
+        .about-text {
             flex: 1;
         }
 
-        .service-image {
+        .about-image {
             flex: 1;
             border-radius: var(--border-radius);
             overflow: hidden;
             box-shadow: var(--shadow);
         }
 
-        .service-steps {
+        .team-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
+            gap: 2.5rem;
+            margin-top: 4rem;
+            justify-content: center;
         }
 
-        .step-card {
+.team-grid {
+    display: flex;
+    justify-content: center; /* centra horizontalmente */
+    gap: 3.5rem;
+    flex-wrap: wrap;
+    margin-top: 4rem;
+}
+
+
+        .team-card {
             background-color: var(--white);
             border-radius: var(--border-radius);
             padding: 2rem;
+            text-align: center;
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
             border: 1px solid rgba(37, 99, 235, 0.1);
+            max-width: 300px;
+            margin: 0 auto; /* para centrar en la celda del grid */
         }
 
-        .step-number {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 1rem;
-        }
 
-        .back-link {
-            display: inline-block;
-            margin-top: 2rem;
-            color: var(--primary);
-            font-weight: 500;
-        }
-
-        .back-link i {
-            margin-right: 0.5rem;
+        .team-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            overflow: hidden;
+            background-color: var(--gray-100);
         }
 
         @media (max-width: 992px) {
-            .service-content {
+            .about-content {
                 flex-direction: column;
             }
         }
@@ -101,46 +106,39 @@
     </header>
 
     <main>
-        <section class="service-detail">
+        <section class="about-section">
             <div class="container">
                 <div class="section-title">
-                    <h2>Diseño Web</h2>
-                    <p>Creación de sitios web profesionales que convierten visitantes en clientes</p>
+                    <h2>Nuestra Historia</h2>
+                    <p>Conoce más sobre quiénes somos y nuestra pasión por la tecnología</p>
                 </div>
 
-                <div class="service-content">
-                    <div class="service-text">
-                        <p>En Sonest, diseñamos sitios web que no solo lucen impresionantes, sino que también están optimizados para el rendimiento, la conversión y la experiencia del usuario. Nuestro enfoque combina diseño estético con funcionalidad avanzada.</p>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>Fundada en 2024, Sonest nació con la visión de brindar soluciones tecnológicas modernas que ayuden a empresas y emprendedores a crecer en un entorno digital en constante evolución.</p>
+                        <p>Lo que comenzó como una iniciativa de un grupo de profesionales apasionados por el desarrollo web, la seguridad informática y la optimización de procesos, hoy se consolida como una empresa comprometida con la innovación y la excelencia en cada proyecto.</p>
+                        <p>Nuestro enfoque se basa en comprender a fondo los desafíos de cada cliente para crear soluciones personalizadas que generen valor real y sostenible en su negocio.</p>
                         
-                        <h3>Nuestro Proceso</h3>
-                        <div class="service-steps">
-                            <div class="step-card fade-in">
-                                <div class="step-number">01</div>
-                                <h4>Descubrimiento</h4>
-                                <p>Analizamos tus necesidades, objetivos y audiencia para crear una estrategia efectiva.</p>
-                            </div>
-                            <div class="step-card fade-in">
-                                <div class="step-number">02</div>
-                                <h4>Diseño</h4>
-                                <p>Creamos prototipos y diseños que reflejan tu marca y mejoran la experiencia de usuario.</p>
-                            </div>
-                            <div class="step-card fade-in">
-                                <div class="step-number">03</div>
-                                <h4>Desarrollo</h4>
-                                <p>Implementamos las soluciones técnicas utilizando las últimas tecnologías web.</p>
-                            </div>
-                            <div class="step-card fade-in">
-                                <div class="step-number">04</div>
-                                <h4>Lanzamiento</h4>
-                                <p>Realizamos pruebas exhaustivas y lanzamos tu sitio web con soporte continuo.</p>
-                            </div>
-                        </div>
-                        
-                        <a href="contacto.html" class="btn">Solicitar presupuesto</a>
-                        <a href="planes.html" class="back-link"><i class="fas fa-arrow-left"></i> Volver a planes</a>
+                        <h3>Nuestro Equipo</h3>
+                        <p>Contamos con un equipo multidisciplinario de desarrolladores, diseñadores, expertos en redes y consultores estratégicos dedicados a ofrecer un servicio cercano, profesional y de alta calidad.</p>
                     </div>
-                    <div class="service-image fade-in">
-                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400' viewBox='0 0 600 400'%3E%3Crect fill='%23e6f0ff' width='600' height='400'/%3E%3Crect fill='%23ffffff' x='100' y='80' width='400' height='240' rx='10'/%3E%3Crect fill='%232563eb' x='120' y='100' width='360' height='40' rx='5'/%3E%3Crect fill='%23f0f7ff' x='120' y='160' width='360' height='30' rx='3'/%3E%3Crect fill='%23f0f7ff' x='120' y='210' width='280' height='30' rx='3'/%3E%3Crect fill='%23f0f7ff' x='120' y='260' width='360' height='30' rx='3'/%3E%3C/svg%3E" alt="Diseño Web">
+                    <div class="about-image fade-in">
+                        <img src="https://i.imgur.com/lfAE6ol.png" alt="Equipo Sonest">
+                    </div>
+                </div>
+
+
+                <div class="section-title" style="margin-top: 6rem;">
+                    <h2>Conoce a Nuestro Equipo</h2>
+                </div>
+
+                <div class="team-grid">
+                    <div class="team-card fade-in">
+                        <div class="team-image">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='150' viewBox='0 0 150 150'%3E%3Ccircle fill='%23d0e1ff' cx='75' cy='75' r='75'/%3E%3Ccircle fill='%23a0c4ff' cx='75' cy='60' r='20'/%3E%3Cpath fill='%23a0c4ff' d='M75,85 a40,30 0 0,0 0,60 a40,30 0 0,0 0,-20'/%3E%3C/svg%3E" alt="María López">
+                        </div>
+                        <h3>Fabrizio</h3>
+                        <p>Ceo & Fundador</p>
                     </div>
                 </div>
             </div>
@@ -193,7 +191,6 @@
                 <ul class="footer-links">
                     <li><a href="politica-de-privacidad.html" class="footer-link">Política de Privacidad</a></li>
                     <li><a href="terminos-y-condiciones-de-uso.html" class="footer-link">Términos y Condiciones</a></li>
-                    <li><a href="aviso-legal.html"class="footer-link">Aviso Legal</a></li>
                 </ul>
             </div>
         </div>

@@ -3,69 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diseño Web - Sonest</title>
+    <title>Planes y Servicios - Sonest</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" href="https://i.imgur.com/gXWLOT4.png" type="image/png">
     <style>
-        .service-detail {
+        .plans-section {
             padding: 6rem 0;
         }
 
-        .service-content {
+        .plans-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .plan-card {
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            padding: 2.5rem;
+            transition: var(--transition);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border: 1px solid rgba(37, 99, 235, 0.1);
+            position: relative;
+        }
+
+        .plan-card.featured {
+            border: 2px solid var(--primary);
+            transform: scale(1.05);
+            z-index: 1;
+        }
+
+        .plan-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(37, 99, 235, 0.15);
+        }
+
+        .plan-name {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .plan-price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        .plan-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .plan-features li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--gray-200);
             display: flex;
-            gap: 4rem;
             align-items: center;
         }
 
-        .service-text {
-            flex: 1;
-        }
-
-        .service-image {
-            flex: 1;
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            box-shadow: var(--shadow);
-        }
-
-        .service-steps {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
-        }
-
-        .step-card {
-            background-color: var(--white);
-            border-radius: var(--border-radius);
-            padding: 2rem;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            border: 1px solid rgba(37, 99, 235, 0.1);
-        }
-
-        .step-number {
-            font-size: 2rem;
-            font-weight: 700;
+        .plan-features li:before {
+            content: '\f00c';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
             color: var(--primary);
-            margin-bottom: 1rem;
+            margin-right: 0.75rem;
         }
 
-        .back-link {
-            display: inline-block;
-            margin-top: 2rem;
-            color: var(--primary);
-            font-weight: 500;
-        }
-
-        .back-link i {
-            margin-right: 0.5rem;
-        }
-
-        @media (max-width: 992px) {
-            .service-content {
-                flex-direction: column;
-            }
+        .feature-badge {
+            position: absolute;
+            top: -15px;
+            right: 20px;
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            font-size: 0.875rem;
+            font-weight: 600;
         }
     </style>
 </head>
@@ -101,46 +117,55 @@
     </header>
 
     <main>
-        <section class="service-detail">
+        <section class="plans-section">
             <div class="container">
                 <div class="section-title">
-                    <h2>Diseño Web</h2>
-                    <p>Creación de sitios web profesionales que convierten visitantes en clientes</p>
+                    <h2>Nuestros Planes</h2>
+                    <p>Selecciona el paquete que mejor se adapte a tus necesidades</p>
                 </div>
-
-                <div class="service-content">
-                    <div class="service-text">
-                        <p>En Sonest, diseñamos sitios web que no solo lucen impresionantes, sino que también están optimizados para el rendimiento, la conversión y la experiencia del usuario. Nuestro enfoque combina diseño estético con funcionalidad avanzada.</p>
-                        
-                        <h3>Nuestro Proceso</h3>
-                        <div class="service-steps">
-                            <div class="step-card fade-in">
-                                <div class="step-number">01</div>
-                                <h4>Descubrimiento</h4>
-                                <p>Analizamos tus necesidades, objetivos y audiencia para crear una estrategia efectiva.</p>
-                            </div>
-                            <div class="step-card fade-in">
-                                <div class="step-number">02</div>
-                                <h4>Diseño</h4>
-                                <p>Creamos prototipos y diseños que reflejan tu marca y mejoran la experiencia de usuario.</p>
-                            </div>
-                            <div class="step-card fade-in">
-                                <div class="step-number">03</div>
-                                <h4>Desarrollo</h4>
-                                <p>Implementamos las soluciones técnicas utilizando las últimas tecnologías web.</p>
-                            </div>
-                            <div class="step-card fade-in">
-                                <div class="step-number">04</div>
-                                <h4>Lanzamiento</h4>
-                                <p>Realizamos pruebas exhaustivas y lanzamos tu sitio web con soporte continuo.</p>
-                            </div>
-                        </div>
-                        
-                        <a href="contacto.html" class="btn">Solicitar presupuesto</a>
-                        <a href="planes.html" class="back-link"><i class="fas fa-arrow-left"></i> Volver a planes</a>
+                
+                <div class="plans-grid">
+                    <div class="plan-card fade-in">
+                        <div class="plan-name">Básico</div>
+                        <div class="plan-price">$299<span>/mes</span></div>
+                        <ul class="plan-features">
+                            <li>Diseño web personalizado</li>
+                            <li>5 páginas estáticas</li>
+                            <li>Formulario de contacto</li>
+                            <li>Optimización móvil</li>
+                            <li>Soporte técnico básico</li>
+                        </ul>
+                        <a href="contacto.html" class="btn">Contratar</a>
                     </div>
-                    <div class="service-image fade-in">
-                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400' viewBox='0 0 600 400'%3E%3Crect fill='%23e6f0ff' width='600' height='400'/%3E%3Crect fill='%23ffffff' x='100' y='80' width='400' height='240' rx='10'/%3E%3Crect fill='%232563eb' x='120' y='100' width='360' height='40' rx='5'/%3E%3Crect fill='%23f0f7ff' x='120' y='160' width='360' height='30' rx='3'/%3E%3Crect fill='%23f0f7ff' x='120' y='210' width='280' height='30' rx='3'/%3E%3Crect fill='%23f0f7ff' x='120' y='260' width='360' height='30' rx='3'/%3E%3C/svg%3E" alt="Diseño Web">
+                    
+                    <div class="plan-card featured fade-in">
+                        <div class="feature-badge">Recomendado</div>
+                        <div class="plan-name">Profesional</div>
+                        <div class="plan-price">$599<span>/mes</span></div>
+                        <ul class="plan-features">
+                            <li>Diseño web avanzado</li>
+                            <li>Hasta 15 páginas</li>
+                            <li>Integración con redes sociales</li>
+                            <li>Panel de administración</li>
+                            <li>Soporte prioritario</li>
+                            <li>SEO básico</li>
+                        </ul>
+                        <a href="contacto.html" class="btn">Contratar</a>
+                    </div>
+                    
+                    <div class="plan-card fade-in">
+                        <div class="plan-name">Empresarial</div>
+                        <div class="plan-price">$999<span>/mes</span></div>
+                        <ul class="plan-features">
+                            <li>Diseño web premium</li>
+                            <li>Páginas ilimitadas</li>
+                            <li>E-commerce integrado</li>
+                            <li>Hosting premium</li>
+                            <li>Soporte 24/7</li>
+                            <li>SEO avanzado</li>
+                            <li>Analítica avanzada</li>
+                        </ul>
+                        <a href="contacto.html" class="btn">Contratar</a>
                     </div>
                 </div>
             </div>
@@ -193,7 +218,6 @@
                 <ul class="footer-links">
                     <li><a href="politica-de-privacidad.html" class="footer-link">Política de Privacidad</a></li>
                     <li><a href="terminos-y-condiciones-de-uso.html" class="footer-link">Términos y Condiciones</a></li>
-                    <li><a href="aviso-legal.html"class="footer-link">Aviso Legal</a></li>
                 </ul>
             </div>
         </div>
@@ -202,7 +226,6 @@
         </div>
     </div>
 </footer> 
-
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const mobileToggle = document.querySelector('.mobile-toggle');
