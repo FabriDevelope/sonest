@@ -3,90 +3,224 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Planes y Servicios - Sonest</title>
+    <title>Sonest</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" href="https://i.imgur.com/gXWLOT4.png" type="image/png">
-    <style>
-        .plans-section {
-            padding: 6rem 0;
+     <style>
+        .hero {
+            padding: 12rem 0 7rem;
+            background: linear-gradient(135deg, #f0f7ff 0%, #e6f0ff 100%);
+            position: relative;
+            overflow: hidden;
         }
 
-        .plans-grid {
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(37, 99, 235, 0.05) 100%);
+            z-index: 0;
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-image {
+            flex: 1;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transform: perspective(1000px) rotateY(-5deg);
+            transition: var(--transition);
+        }
+
+        .hero-image:hover {
+            transform: perspective(1000px) rotateY(0);
+        }
+
+        .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2.5rem;
             margin-top: 3rem;
         }
 
-        .plan-card {
+        .feature-card {
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            padding: 2.5rem;
+            transition: var(--transition);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            border: 1px solid rgba(37, 99, 235, 0.1);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(37, 99, 235, 0.15);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #e6f0ff 0%, #d0e1ff 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+            color: var(--primary);
+        }
+
+        .services {
+            background-color: var(--gray-100);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            margin-top: 2rem;
+        }
+
+        .service-card {
             background-color: var(--white);
             border-radius: var(--border-radius);
             padding: 2.5rem;
             transition: var(--transition);
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
             border: 1px solid rgba(37, 99, 235, 0.1);
-            position: relative;
         }
 
-        .plan-card.featured {
-            border: 2px solid var(--primary);
-            transform: scale(1.05);
-            z-index: 1;
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(37, 99, 235, 0.1);
         }
 
-        .plan-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(37, 99, 235, 0.15);
-        }
-
-        .plan-name {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--primary);
-        }
-
-        .plan-price {
+        .service-icon {
             font-size: 2.5rem;
-            font-weight: 700;
             margin-bottom: 1.5rem;
-        }
-
-        .plan-features {
-            list-style: none;
-            margin-bottom: 2rem;
-        }
-
-        .plan-features li {
-            padding: 0.75rem 0;
-            border-bottom: 1px solid var(--gray-200);
-            display: flex;
-            align-items: center;
-        }
-
-        .plan-features li:before {
-            content: '\f00c';
-            font-family: 'Font Awesome 5 Free';
-            font-weight: 900;
+            display: inline-block;
             color: var(--primary);
-            margin-right: 0.75rem;
         }
 
-        .feature-badge {
-            position: absolute;
-            top: -15px;
-            right: 20px;
-            background-color: var(--primary);
-            color: var(--white);
-            padding: 0.5rem 1rem;
+        .soon-badge {
+            display: inline-block;
+            background-color: var(--gray-200);
+            color: var(--gray-700);
+            font-size: 0.75rem;
+            padding: 0.25rem 0.75rem;
             border-radius: 2rem;
-            font-size: 0.875rem;
+            margin-left: 0.5rem;
+            vertical-align: super;
             font-weight: 600;
         }
+
+        .stats {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 2rem;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: var(--border-radius);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .testimonial-card {
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            padding: 2.5rem;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border: 1px solid rgba(37, 99, 235, 0.1);
+        }
+
+        .testimonial-quote {
+            font-size: 3rem;
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            opacity: 0.1;
+            color: var(--primary);
+        }
+
+        .cta {
+            background: linear-gradient(135deg, var(--gray-800) 0%, var(--black) 100%);
+            color: var(--white);
+            text-align: center;
+            padding: 5rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            z-index: 0;
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 1;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .fade-in-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
-</head>
-<body>
-    <!-- Header -->
+        <!-- Header -->
     <header>
         <div class="container header-container">
             <a href="index.html" class="logo">
@@ -116,68 +250,27 @@
         </div>
     </header>
 
-    <main>
-        <section class="plans-section">
-            <div class="container">
-                <div class="section-title">
-                    <h2>Nuestros Planes</h2>
-                    <p>Selecciona el paquete que mejor se adapte a tus necesidades</p>
-                </div>
-                
-                <div class="plans-grid">
-                    <div class="plan-card fade-in">
-                        <div class="plan-name">Diseño de Web</div>
-                        <div class="plan-price">$75<span>usd</span></div>
-                        <ul class="plan-features">
-                            <li>Diseño web personalizado</li>
-                            <li>Incluye estilo Profesional</li>
-                            <li>Incluye instrucciones de como publicarlo</li>
-                            <li>Optimización</li>
-                            <li>Soporte</li>
-                        </ul>
-                        <a href="pago.html" class="btn">Contratar -></a>
-                    </div>
-                    
-                    <div class="plan-card featured fade-in">
-                        <div class="feature-badge">Recomendado</div>
-                        <div class="plan-name">Personalizado</div>
-                        <div class="plan-price">desde $75<span>usd</span></div>
-                        <ul class="plan-features">
-                            <li>Desde $75 usd</li>
-                            <li>Totalmente personalizado</li>
-                        </ul>
-                        <a href="pago.html" class="btn">Contratar -></a>
-                    </div>
-                    
-                    <div class="plan-card fade-in">
-                        <div class="plan-name">Diseño de Programa</div>
-                        <div class="plan-price">$100<span>usd</span></div>
-                        <ul class="plan-features">
-                            <li>precio variable desde los $75 usd</li>
-                            <li>Diseño de programa personalizado</li>
-                            <li>Incluye instrucciones de como utilizarlo</li>
-                            <li>Optimización</li>
-                            <li>Soporte</li>
-                        </ul>
-                        <a href="pago.html" class="btn">Contratar -></a>
-                    </div>
+     <div class="container">
+    <h1>Pagar tu servicio Sonest</h1>
 
-                    <div class="plan-card fade-in">
-                        <div class="plan-name">Diseño de Programa</div>
-                        <div class="feature-badge">Todos los Servicios</div>
-                        <div class="plan-price">Explora todos los Servicios</div>
-                        <ul class="plan-features">
-                            <li>precios variables desde los $75 usd</li>
-                            <li>Diseños personalizados</li>
-                            <li>Incluyen instrucciones</li>
-                            <li>Soporte</li>
-                        </ul>
-                        <a href="pago.html" class="btn">Ver Servicios -></a>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
+    <!-- IFRAME INTEGRADO DE JOTFORM -->
+    <iframe
+      id="JotFormIFrame-252140524822044"
+      title="Sonest"
+      onload="window.parent.scrollTo(0,0)"
+      allowtransparency="true"
+      allow="geolocation; microphone; camera; fullscreen; payment"
+      src="https://form.jotform.com/sonestadm/sonest-pago-de-servicios"
+      frameborder="0"
+      style="min-width:100%;max-width:100%;height:700px;border:none;"
+      scrolling="no"
+    ></iframe>
+    
+    <script src='https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js'></script>
+    <script>
+      window.jotformEmbedHandler("iframe[id='JotFormIFrame-252140524822044']", "https://form.jotform.com/");
+    </script>
+  </div>
 
   <!-- Footer -->
 <footer>
@@ -234,8 +327,7 @@
         </div>
     </div>
 </footer> 
-
-    <script>
+        <script>
         document.addEventListener('DOMContentLoaded', function() {
             const mobileToggle = document.querySelector('.mobile-toggle');
             const navMenu = document.querySelector('.nav-menu');
@@ -260,5 +352,3 @@
             });
         });
     </script>
-</body>
-</html>
