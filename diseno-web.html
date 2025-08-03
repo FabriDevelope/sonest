@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diseño Web - Sonest</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .service-detail {
+            padding: 6rem 0;
+        }
+
+        .service-content {
+            display: flex;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .service-text {
+            flex: 1;
+        }
+
+        .service-image {
+            flex: 1;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .service-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .step-card {
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border: 1px solid rgba(37, 99, 235, 0.1);
+        }
+
+        .step-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 2rem;
+            color: var(--primary);
+            font-weight: 500;
+        }
+
+        .back-link i {
+            margin-right: 0.5rem;
+        }
+
+        @media (max-width: 992px) {
+            .service-content {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="https://i.imgur.com/yJCH2BL.png" alt="Sonest Logo" style="height: 60px; margin-right: 10px;">
+            </a>
+            <nav>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Inicio</a></li>
+                    <li class="nav-item"><a href="nosotros.html" class="nav-link">Nosotros</a></li>
+                    <li class="nav-item dropdown">
+                        <a href="planes.html" class="nav-link">Servicios <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-content">
+                            <li><a href="diseno-web.html" class="dropdown-item">Diseño Web</a></li>
+                            <li><a href="diseno-programas.html" class="dropdown-item">Diseño de Programas</a></li>
+                            <li><a href="mantenimiento-redes.html" class="dropdown-item">Mantenimiento de Redes</a></li>
+                            <li><a href="posicionamiento-web.html" class="dropdown-item">Posicionamiento Web</a></li>
+                            <li><a href="hosting.html" class="dropdown-item">Hosting</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a href="planes.html" class="nav-link">Planes</a></li>
+                    <li class="nav-item"><a href="contacto.html" class="nav-link active">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="service-detail">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Diseño Web</h2>
+                    <p>Creación de sitios web profesionales que convierten visitantes en clientes</p>
+                </div>
+
+                <div class="service-content">
+                    <div class="service-text">
+                        <p>En Sonest, diseñamos sitios web que no solo lucen impresionantes, sino que también están optimizados para el rendimiento, la conversión y la experiencia del usuario. Nuestro enfoque combina diseño estético con funcionalidad avanzada.</p>
+                        
+                        <h3>Nuestro Proceso</h3>
+                        <div class="service-steps">
+                            <div class="step-card fade-in">
+                                <div class="step-number">01</div>
+                                <h4>Descubrimiento</h4>
+                                <p>Analizamos tus necesidades, objetivos y audiencia para crear una estrategia efectiva.</p>
+                            </div>
+                            <div class="step-card fade-in">
+                                <div class="step-number">02</div>
+                                <h4>Diseño</h4>
+                                <p>Creamos prototipos y diseños que reflejan tu marca y mejoran la experiencia de usuario.</p>
+                            </div>
+                            <div class="step-card fade-in">
+                                <div class="step-number">03</div>
+                                <h4>Desarrollo</h4>
+                                <p>Implementamos las soluciones técnicas utilizando las últimas tecnologías web.</p>
+                            </div>
+                            <div class="step-card fade-in">
+                                <div class="step-number">04</div>
+                                <h4>Lanzamiento</h4>
+                                <p>Realizamos pruebas exhaustivas y lanzamos tu sitio web con soporte continuo.</p>
+                            </div>
+                        </div>
+                        
+                        <a href="contacto.html" class="btn">Solicitar presupuesto</a>
+                        <a href="planes.html" class="back-link"><i class="fas fa-arrow-left"></i> Volver a planes</a>
+                    </div>
+                    <div class="service-image fade-in">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400' viewBox='0 0 600 400'%3E%3Crect fill='%23e6f0ff' width='600' height='400'/%3E%3Crect fill='%23ffffff' x='100' y='80' width='400' height='240' rx='10'/%3E%3Crect fill='%232563eb' x='120' y='100' width='360' height='40' rx='5'/%3E%3Crect fill='%23f0f7ff' x='120' y='160' width='360' height='30' rx='3'/%3E%3Crect fill='%23f0f7ff' x='120' y='210' width='280' height='30' rx='3'/%3E%3Crect fill='%23f0f7ff' x='120' y='260' width='360' height='30' rx='3'/%3E%3C/svg%3E" alt="Diseño Web">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <a href="index.html" class="footer-logo">Sonest</a>
+                    <p>Transformamos ideas en soluciones digitales innovadoras para potenciar tu negocio.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="https://discord.gg/TzeV6DSFxJ" class="social-link"><i class="fab fa-discord"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="footer-title">Enlaces</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html" class="footer-link">Inicio</a></li>
+                        <li><a href="nosotros.html" class="footer-link">Nosotros</a></li>
+                        <li><a href="planes.html" class="footer-link">Planes</a></li>
+                        <li><a href="contacto.html" class="footer-link">Contacto</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Servicios</h4>
+                    <ul class="footer-links">
+                        <li><a href="diseno-web.html" class="footer-link">Diseño Web</a></li>
+                        <li><a href="diseno-programas.html" class="footer-link">Diseño de Programas</a></li>
+                        <li><a href="mantenimiento-redes.html" class="footer-link">Mantenimiento de Redes</a></li>
+                        <li><a href="posicionamiento-web.html" class="footer-link">Posicionamiento Web</a></li>
+                        <li><a href="hosting.html" class="footer-link">Hosting</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Contacto</h4>
+                    <ul class="footer-links">
+                        <li><a href="#" class="footer-link"><i class="fas fa-map-marker-alt"></i> Argentina</a></li>
+                        <li><a href="mailto:sonest.adm@proton.me" class="footer-link"><i class="fas fa-envelope"></i> info@sonest.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Sonest. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileToggle = document.querySelector('.mobile-toggle');
+            const navMenu = document.querySelector('.nav-menu');
+
+            if (mobileToggle && navMenu) {
+                mobileToggle.addEventListener('click', function() {
+                    navMenu.classList.toggle('active');
+                });
+            }
+
+            // Animaciones al hacer scroll
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in-visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.fade-in').forEach(element => {
+                observer.observe(element);
+            });
+        });
+    </script>
+</body>
+</html>
